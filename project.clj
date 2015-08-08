@@ -9,7 +9,6 @@
                  [cljsjs/react  "0.13.3-1"]
                  [reagent       "0.5.0"]
                  [reagent-forms "0.5.4"]
-                 [io.nervous/hildebrand  "1.0.0-SNAPSHOT"]
                  [io.nervous/fink-nottle "1.0.0-SNAPSHOT"]
                  [io.nervous/cljs-lambda "0.1.1"]
                  [io.nervous/cljs-nodejs-externs "0.2.0-SNAPSHOT"]

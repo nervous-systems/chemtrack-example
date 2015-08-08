@@ -29,10 +29,8 @@
                {:write-ch sightings-out}))]
       (loop []
         (when-let [{item :message} (<! sightings-in)]
-          (println "READ " item)
           (swap! items util/conj+evict item max-items)
-          (recur))
-        (println "GIVING UP")))))
+          (recur))))))
 
 (defn mount-root []
   (let [sightings-out (async/chan)]
