@@ -1,20 +1,15 @@
-.sighting-item {
-    -webkit-animation: fadein 3.5s; /* Safari and Chrome */
-    -moz-animation: fadein 3.5s; /* Firefox */
-    -ms-animation: fadein 3.5s; /* Internet Explorer */
-    -o-animation: fadein 3.5s; /* Opera */
-    animation: fadein 3.5s;
+body {
+    font-family: "Lato", 'Helvetica Neue', Helvetica, sans-serif;
 }
 
 .periodic {
     text-transform: capitalize;
 }
 
-body {
-    font-family: "Lato", 'Helvetica Neue', Helvetica, sans-serif;
+button, .input-group-addon, .control-label {
+    text-transform: uppercase;
+    font-weight: normal;
 }
-
-button, .input-group-addon, .control-label { text-transform: uppercase; font-weight: normal }
 
 .column-heading {
     margin-top: 0px;
