@@ -13,7 +13,7 @@
 
 (def sighting-out pr-str)
 
-(defn queue-name! [port]
+(defn queue-name! [{:keys [port]}]
   (go
     (let [{:keys [instance-id region]}
           (<! (instance-data/instance-identity!
