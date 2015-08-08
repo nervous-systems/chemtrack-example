@@ -69,9 +69,9 @@
                  :target :nodejs}}]}
 
   :profiles {:dev
-             {:repl-options
-              {:source-paths ["frontend" "backend" "lambda"]
-               :nrepl-middleware
+             {:source-paths ["frontend" "backend" "lambda"]
+              :repl-options
+              {:nrepl-middleware
                [cemerick.piggieback/wrap-cljs-repl]}
               :dependencies
               [[com.cemerick/piggieback "0.2.1"]
