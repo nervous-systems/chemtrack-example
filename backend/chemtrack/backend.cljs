@@ -1,4 +1,4 @@
-(ns chemtrack.backend.core
+(ns chemtrack.backend
   (:require [cljs.core.async :as async :refer [<! >! close!]]
             [cljs.nodejs :as nodejs]
             [cljs.reader :refer [read-string]]

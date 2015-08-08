@@ -1,4 +1,4 @@
-(ns chemtrack.frontend.core
+(ns chemtrack.frontend
   (:require [reagent.core :as reagent]
             [cljs.core.async :as async :refer [<! >!]]
             [chord.client :as chord]

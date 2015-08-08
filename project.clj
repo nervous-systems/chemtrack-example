@@ -47,7 +47,7 @@
                 {:output-to "target/backend/chemtrack.js"
                  :output-dir "target/backend"
                  :optimizations :none
-                 :main "chemtrack.frontend.core"
+                 :main "chemtrack.frontend"
                  :target :nodejs}}
                {:id "frontend"
                 :source-paths ["frontend"]
@@ -56,7 +56,7 @@
                 {:asset-path "js/out"
                  :output-to "resources/public/js/chemtrack.js"
                  :output-dir "resources/public/js/out"
-                 :main "chemtrack.backend.core"
+                 :main "chemtrack.backend"
                  :source-map true
                  :optimizations :none}}
                {:id "lambda"
@@ -69,9 +69,9 @@
                  :target :nodejs}}]}
 
   :profiles {:dev
-             {:source-paths ["frontend" "backend" "lambda"]
-              :repl-options
-              {:nrepl-middleware
+             {:repl-options
+              {:source-paths ["frontend" "backend" "lambda"]
+               :nrepl-middleware
                [cemerick.piggieback/wrap-cljs-repl]}
               :dependencies
               [[com.cemerick/piggieback "0.2.1"]
