@@ -28,14 +28,13 @@
   :plugins [[lein-cljsbuild "1.0.6"]
             [lein-npm "0.6.0"]
             [lein-figwheel "0.3.7"]
-            [io.nervous/lein-cljs-lambda "0.2.1"]]
+            [io.nervous/lein-cljs-lambda "0.2.2"]]
 
   :figwheel {:open-file-command "emacsclient"}
 
   :cljs-lambda
   {:cljs-build-id "lambda"
    :defaults {:role "arn:aws:iam::510355070671:role/permissive-lambda"}
-   :aws-profile "nervous.io"
    :functions
    [{:name    "topic-to-queue"
      :invoke  chemtrack.lambda/topic-to-queue
@@ -48,7 +47,7 @@
                 {:output-to "target/backend/chemtrack.js"
                  :output-dir "target/backend"
                  :optimizations :none
-                 :main "chemtrack.core"
+                 :main "chemtrack.frontend.core"
                  :target :nodejs}}
                {:id "frontend"
                 :source-paths ["frontend"]
@@ -57,7 +56,7 @@
                 {:asset-path "js/out"
                  :output-to "resources/public/js/chemtrack.js"
                  :output-dir "resources/public/js/out"
-                 :main "chemtrack.core"
+                 :main "chemtrack.backend.core"
                  :source-map true
                  :optimizations :none}}
                {:id "lambda"
@@ -70,7 +69,8 @@
                  :target :nodejs}}]}
 
   :profiles {:dev
-             {:repl-options
+             {:source-paths ["frontend" "backend" "lambda"]
+              :repl-options
               {:nrepl-middleware
                [cemerick.piggieback/wrap-cljs-repl]}
               :dependencies

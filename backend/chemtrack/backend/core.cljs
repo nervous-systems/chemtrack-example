@@ -1,11 +1,11 @@
-(ns chemtrack.core
+(ns chemtrack.backend.core
   (:require [cljs.core.async :as async :refer [<! >! close!]]
             [cljs.nodejs :as nodejs]
             [cljs.reader :refer [read-string]]
             [eulalie.creds]
             [fink-nottle.sns :as sns]
             [fink-nottle.sqs.channeled :as sqs]
-            [chemtrack.util :as util])
+            [chemtrack.backend.util :as util])
   (:require-macros [cljs.core.async.macros :refer [go]]))
 
 (nodejs/enable-util-print!)

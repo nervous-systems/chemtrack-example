@@ -1,4 +1,4 @@
-(ns chemtrack.template
+(ns chemtrack.frontend.template
   (:require [clojure.walk :as walk]))
 
 (def substitute walk/prewalk-replace)

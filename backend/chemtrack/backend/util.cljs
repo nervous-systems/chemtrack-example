@@ -1,4 +1,4 @@
-(ns chemtrack.util
+(ns chemtrack.backend.util
   (:require [cljs.core.async :as async :refer [<!]]
             [eulalie.instance-data :as instance-data]
             [eulalie.lambda.util :as lambda]
