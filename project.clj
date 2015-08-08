@@ -47,7 +47,7 @@
                 {:output-to "target/backend/chemtrack.js"
                  :output-dir "target/backend"
                  :optimizations :none
-                 :main "chemtrack.frontend"
+                 :main "chemtrack.backend"
                  :target :nodejs}}
                {:id "frontend"
                 :source-paths ["frontend"]
@@ -56,7 +56,7 @@
                 {:asset-path "js/out"
                  :output-to "resources/public/js/chemtrack.js"
                  :output-dir "resources/public/js/out"
-                 :main "chemtrack.backend"
+                 :main "chemtrack.frontend"
                  :source-map true
                  :optimizations :none}}
                {:id "lambda"
