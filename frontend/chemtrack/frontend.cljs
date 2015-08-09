@@ -9,7 +9,7 @@
 
 (enable-console-print!)
 
-(defn recent-container []
+(def recent-container
   (let [key-fn (juxt :timestamp :city :elements)]
     (sorted-set-by #(compare (key-fn %1) (key-fn %2)))))
 
@@ -33,7 +33,7 @@
 
 (defn mount-root []
   (let [sightings-out (async/chan)
-        recent        (reagent/atom (recent-container))]
+        recent        (reagent/atom recent-container)]
     (ws-loop! recent sightings-out)
     (reagent/render
      [render/app
