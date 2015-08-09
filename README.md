@@ -1,12 +1,12 @@
 # chemtrack-example
 Clojurescript/Node/Reagent/Lambda Example Application
 
-Example code for [Chasing Chemtrails with Clojurescript](https://nervous.io/clojure/clojurescript/node/aws/2015/08/09/chemtrails/)
+Example code for [Chasing Chemtrails with Clojurescript](https://nervous.io/clojure/clojurescript/node/aws/2015/08/09/chemtrails/).  [Demo instance here](http://chemtrack.nervous.io).
 
 ## Dependencies
   - NPM
   - [AWS CLI](https://aws.amazon.com/cli/)
-  - EC2 (the queue naming code retrieves instance metadata.  [Easy enough to change](https://github.com/nervous-systems/chemtrack-example/blob/master/backend/chemtrack/backend/util.cljs#L23))
+  - EC2 (The queue naming code retrieves instance metadata.  [Easy enough to change](https://github.com/nervous-systems/chemtrack-example/blob/master/backend/chemtrack/backend/util.cljs#L23))
 
 Steps:
  - `lein deps`

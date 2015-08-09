@@ -4,7 +4,7 @@
   (let [loc (comp not-empty
                   (partial aget (aget js/window "location"))
                   name)
-        scheme (str "ws" (when (-> :protocol loc (= "https")) "s"))
+        scheme (str "ws" (when (-> :protocol loc (= "https:")) "s"))
         port   (some->> :port loc (str ":"))]
     (str scheme "://" (loc :hostname) port (loc :pathname) segment)))
 
