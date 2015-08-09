@@ -9,8 +9,8 @@
                  [cljsjs/react  "0.13.3-1"]
                  [reagent       "0.5.0"]
                  [reagent-forms "0.5.4"]
-                 [io.nervous/fink-nottle "0.3.0"]
-                 [io.nervous/cljs-lambda "0.1.1"]
+                 [io.nervous/fink-nottle "0.4.0"]
+                 [io.nervous/cljs-lambda "0.1.2"]
                  [io.nervous/cljs-nodejs-externs "0.2.0"]
                  [jarohen/chord "0.6.0"]
                  [cljsjs/moment "2.9.0-0"]]
@@ -28,7 +28,7 @@
 
   :plugins [[lein-cljsbuild "1.0.6"]
             [lein-npm "0.6.0"]
-            [io.nervous/lein-cljs-lambda "0.2.2"]]
+            [io.nervous/lein-cljs-lambda "0.2.3"]]
 
   :figwheel {:open-file-command "emacsclient"}
 
@@ -56,16 +56,13 @@
                 {:asset-path "js/out"
                  :output-to "resources/public/js/chemtrack.js"
                  :output-dir "resources/public/js/out"
-                 :main "chemtrack.frontend"
-                 :source-map true
-                 :optimizations :none}}
+                 :optimizations :advanced}}
                {:id "lambda"
                 :source-paths ["lambda"]
                 :compiler
                 {:output-to "target/lambda/chemtrack.js"
                  :output-dir "target/lambda"
-                 :optimizations :none
-                 :source-map true
+                 :optimizations :advanced
                  :target :nodejs}}]}
 
   :profiles {:dev
