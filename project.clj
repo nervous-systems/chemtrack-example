@@ -9,9 +9,9 @@
                  [cljsjs/react  "0.13.3-1"]
                  [reagent       "0.5.0"]
                  [reagent-forms "0.5.4"]
-                 [io.nervous/fink-nottle "1.0.0-SNAPSHOT"]
+                 [io.nervous/fink-nottle "0.3.0"]
                  [io.nervous/cljs-lambda "0.1.1"]
-                 [io.nervous/cljs-nodejs-externs "0.2.0-SNAPSHOT"]
+                 [io.nervous/cljs-nodejs-externs "0.2.0"]
                  [jarohen/chord "0.6.0"]
                  [cljsjs/moment "2.9.0-0"]]
   :exclusions [[org.clojure/clojure]]
@@ -28,7 +28,6 @@
 
   :plugins [[lein-cljsbuild "1.0.6"]
             [lein-npm "0.6.0"]
-            [lein-figwheel "0.3.7"]
             [io.nervous/lein-cljs-lambda "0.2.2"]]
 
   :figwheel {:open-file-command "emacsclient"}
