@@ -12,7 +12,8 @@
                  [io.nervous/fink-nottle "1.0.0-SNAPSHOT"]
                  [io.nervous/cljs-lambda "0.1.1"]
                  [io.nervous/cljs-nodejs-externs "0.2.0-SNAPSHOT"]
-                 [jarohen/chord "0.6.0"]]
+                 [jarohen/chord "0.6.0"]
+                 [cljsjs/moment "2.9.0-0"]]
   :exclusions [[org.clojure/clojure]]
 
   :npm {:dependencies [[source-map-support "0.2.8"]

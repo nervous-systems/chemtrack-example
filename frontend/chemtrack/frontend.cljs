@@ -9,18 +9,17 @@
 
 (enable-console-print!)
 
-(defonce items
-  (let [key-fn (juxt :timestamp :city)]
-    (reagent/atom
-     (sorted-set-by #(compare (key-fn %1) (key-fn %2))))))
+(defn recent-container []
+  (let [key-fn (juxt :timestamp :city :elements)]
+    (sorted-set-by #(compare (key-fn %1) (key-fn %2)))))
 
-(defn form [config]
+(defn bind-form [config]
   (let [sighting (reagent/atom {})]
     [reagent-forms/bind-fields
      (render/form sighting config)
      sighting]))
 
-(defn ws-loop! [sightings-out &
+(defn ws-loop! [recent sightings-out &
                [{:keys [max-items] :or {max-items 10}}]]
   (go
     (let [{sightings-in :ws-channel}
@@ -28,23 +27,24 @@
                (util/relative-ws-url "sightings")
                {:write-ch sightings-out}))]
       (loop []
-        (when-let [{item :message} (<! sightings-in)]
-          (swap! items util/conj+evict item max-items)
+        (when-let [{sighting :message} (<! sightings-in)]
+          (swap! recent util/conj+evict sighting max-items)
           (recur))))))
 
 (defn mount-root []
-  (let [sightings-out (async/chan)]
-    (ws-loop! sightings-out)
+  (let [sightings-out (async/chan)
+        recent        (reagent/atom (recent-container))]
+    (ws-loop! recent sightings-out)
     (reagent/render
      [render/app
-      form
+      bind-form
       {:sightings-out sightings-out
        :elements {:ag "Aluminum"
                   :ba "Barium"
                   :th "Thorium"
                   :si "Silicon Carbide"
                   :sr "Strontium"}
-       :items items}]
+       :recent recent}]
      (.getElementById js/document "app"))))
 
 (mount-root)

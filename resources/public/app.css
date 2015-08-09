@@ -3,6 +3,35 @@ body {
     font-size: 200%;
 }
 
+.sighting-row * {
+    margin-bottom: 0px;
+}
+
+.sighting-row h2 {
+    margin-top: 0px;
+}
+
+.jumbotron {
+    background-image: url(/heller.jpg);
+    background-attachment: fixed;
+}
+
+.form-modal .list-group-item {
+    cursor: pointer;
+}
+
+.jumbotron h1 {
+    color: white;
+}
+
+.jumbotron button {
+    margin-top: 2rem;
+}
+
+.sightings {
+    margin-top: 2rem;
+}
+
 .periodic {
     text-transform: capitalize;
 }
