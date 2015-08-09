@@ -6,6 +6,7 @@ Example code for [Chasing Chemtrails with Clojurescript](https://nervous.io/cloj
 ## Dependencies
   - NPM
   - [AWS CLI](https://aws.amazon.com/cli/)
+  - EC2 (the queue naming code retrieves instance metadata.  [Easy enough to change](https://github.com/nervous-systems/chemtrack-example/blob/master/backend/chemtrack/backend/util.cljs#L23))
 
 Steps:
  - `lein deps`
